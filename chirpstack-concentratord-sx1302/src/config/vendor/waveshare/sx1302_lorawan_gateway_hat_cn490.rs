@@ -1,7 +1,7 @@
 use libloragw_sx1302::hal;
 
 use super::super::super::super::config;
-use super::super::{ComType, Configuration, RadioConfig};
+use super::super::{ComType, Configuration,Gps, RadioConfig};
 
 pub fn new(conf: &config::Configuration) -> Configuration {
     Configuration {
@@ -222,6 +222,7 @@ pub fn new(conf: &config::Configuration) -> Configuration {
                 tx_gain_table: vec![],
             },
         ],
+        gps: Gps::None,
         com_type: ComType::SPI,
         com_path: "/dev/spidev0.0".to_string(),
         reset_pin: match conf.gateway.reset_pin {
