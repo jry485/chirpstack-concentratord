@@ -1,1 +1,2 @@
 pub mod sx1302_lorawan_gateway_hat_eu868;
+pub mod sx1302_lorawan_gateway_hat_cn490;
