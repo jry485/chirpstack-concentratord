@@ -208,7 +208,7 @@ pub fn new(conf: &config::Configuration) -> Configuration {
                 enable: true,
                 radio_type: hal::RadioType::SX1250,
                 single_input_mode: false,
-                rssi_offset: -207,
+                rssi_offset: -207.0,
                 rssi_temp_compensation: hal::RssiTempCompensationConfig {
                     coeff_a: 0.0,
                     coeff_b: 0.0,
@@ -223,11 +223,21 @@ pub fn new(conf: &config::Configuration) -> Configuration {
             },
         ],
         gps: Gps::None,
-        com_type: ComType::SPI,
+        com_type: ComType::Spi,
         com_path: "/dev/spidev0.0".to_string(),
-        reset_pin: match conf.gateway.reset_pin {
-            0 => Some((0, 23)),
-            _ => Some((0, conf.gateway.reset_pin)),
+        i2c_path: Some("/dev/i2c-1".to_string()),
+        i2c_temp_sensor_addr: Some(0x39),
+        sx1302_reset_pin: match conf.gateway.sx1302_reset_pin {
+            0 => Some(("/dev/gpiochip0".to_string(), 23)),
+            _ => Some(("/dev/gpiochip0".to_string(), conf.gateway.sx1302_reset_pin)),
         },
+        sx1302_power_en_pin: match conf.gateway.sx1302_power_en_pin {
+            0 => Some(("/dev/gpiochip0".to_string(), 18)),
+            _ => Some((
+                "/dev/gpiochip0".to_string(),
+                conf.gateway.sx1302_power_en_pin,
+            )),
+        },
+        ..Default::default()
     }
 }
