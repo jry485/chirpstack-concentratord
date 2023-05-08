@@ -208,6 +208,9 @@ pub fn get(filenames: Vec<String>) -> Configuration {
         "semtech_sx1302css923gw1_as923" => vendor::semtech::sx1302css923gw1_as923::new(&config),
         "waveshare_sx1302_lorawan_gateway_hat_eu868" => {
             vendor::waveshare::sx1302_lorawan_gateway_hat_eu868::new(&config)
+        },
+        "waveshare_sx1302_lorawan_gateway_hat_cn490" => {
+            vendor::waveshare::sx1302_lorawan_gateway_hat_cn490::new(&config)
         }
         _ => panic!("unexpected gateway model: {}", config.gateway.model),
     };
