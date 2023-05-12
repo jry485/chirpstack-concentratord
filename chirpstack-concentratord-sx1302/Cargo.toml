@@ -5,7 +5,7 @@ repository="https://github.com/chirpstack/chirpstack-concentratord/"
 license="MIT"
 version = "4.1.2"
 authors = ["Orne Brocaar <info@brocaar.com>"]
-edition = "2023"
+edition = "2018"
 publish = false
 
 [dependencies]
