@@ -25,4 +25,4 @@ bandwidth=125000
 spreading_factor=10
 
 # TX power.
-tx_power=14
+tx_power=17
