@@ -3,17 +3,17 @@
 !.cargo
 
 # rust builds / cache
-#target
+target
 
 # dist folder
-#/dist
+/dist
 
 # build folders
-#/packaging/vendor/*/*/package
-#/packaging/vendor/*/*/*.ipk
+/packaging/vendor/*/*/package
+/packaging/vendor/*/*/*.ipk
 
 # vendored files
-#/vendor
+/vendor
 
 # Generated Bitbake recipes
 *.bb
