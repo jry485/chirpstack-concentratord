@@ -211,7 +211,7 @@ dependencies = [
 
 [[package]]
 name = "chirpstack-concentratord-sx1302"
-version = "4.1.1"
+version = "4.1.2"
 dependencies = [
  "anyhow",
  "chirpstack_api",
